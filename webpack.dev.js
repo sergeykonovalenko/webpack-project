@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -21,8 +21,8 @@ Object.keys(ifaces).forEach(function (ifname) {
 module.exports = (env, argv) => {
 
     return merge(common(argv.mode), {
-        devtool: 'inline-source-map',
-        // devtool: 'inline-cheap-module-source-map',
+        target: 'web',
+        devtool: 'eval-cheap-module-source-map',
         devServer: {
             // contentBase: './dist',
             contentBase: path.join(__dirname, 'dist'),
@@ -45,10 +45,6 @@ module.exports = (env, argv) => {
                     use: [
                         {
                             loader: MiniCssExtractPlugin.loader,
-                            options: {
-                                hmr: true,
-                                reloadAll: true,
-                            },
                         },
                         // 'style-loader',
                         {
@@ -83,10 +79,6 @@ module.exports = (env, argv) => {
                         // 'style-loader',
                         {
                             loader: MiniCssExtractPlugin.loader,
-                            options: {
-                                hmr: true,
-                                reloadAll: true,
-                            },
                         },
                         {
                             loader: 'css-loader',
@@ -106,7 +98,6 @@ module.exports = (env, argv) => {
             ],
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin(),
             new MiniCssExtractPlugin({
                 // filename: 'css/[name].css',
                 filename: 'style.css',

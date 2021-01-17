@@ -16,11 +16,12 @@ module.exports = mode => {
     return {
         entry: {
             app: './src/index.js',
+            'modernizr.custom': './src/js/vendor/modernizr-custom.js',
         },
         output: {
             filename: 'js/[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
-            publicPath: '/',
+            // publicPath: '/',
         },
         module: {
             rules: [
@@ -46,25 +47,31 @@ module.exports = mode => {
                 {
                     test: /\.svg$/,
                     use: [
-                        'svg-sprite-loader',
+                        {
+                            loader: 'svg-sprite-loader',
+                            options: {
+                                extract: true,
+                                spriteFilename: 'img/sprites/general.svg'
+                            }
+                        },
                         'svgo-loader',
                     ]
                 },
             ],
         },
-        optimization: {
-            splitChunks: {
-                cacheGroups: {
-                    vendor: {
-                        test: /node_modules/,
-                        name: 'vendors',
-                        chunks: 'all',
-                        enforce: true,
-                    }
-                },
-            },
-            // runtimeChunk: true
-        },
+        // optimization: {
+        //     splitChunks: {
+        //         cacheGroups: {
+        //             vendor: {
+        //                 test: /node_modules/,
+        //                 name: 'vendors',
+        //                 chunks: 'all',
+        //                 enforce: true,
+        //             }
+        //         },
+        //     },
+        //     // runtimeChunk: true
+        // },
         plugins: [
             new CleanWebpackPlugin(),
             ...PAGES.map(
@@ -81,18 +88,29 @@ module.exports = mode => {
             }),
             new webpack.ProvidePlugin({
                 $: 'jquery',
-                jQuery: 'jquery'
+                jQuery: 'jquery',
+                // 'window.jQuery': 'jquery',
             }),
-            new CopyPlugin([
-                {from: 'img/**/*'},
-                {from: 'fonts/**/*'},
-            ],
-                {
-                    context: 'src',
-                    force: true,
-                    // copyUnmodified: true,
-                }
-            ),
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: 'img/**/*',
+                        context: 'src',
+                        force: true,
+                        globOptions: {
+                            ignore: ['**/svg-sprite/**',]
+                        }
+                    },
+                    {
+                        from: 'fonts/**/*',
+                        context: 'src',
+                        force: true,
+                    },
+                ],
+                // options: {
+                //     concurrency: 100,
+                // },
+            }),
             new SpriteLoaderPlugin(),
         ],
     }

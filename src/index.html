@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page no-js" lang="ru">
 <head>
     <!-- Meta -->
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
     <!-- SEO -->
     <title>Webpack</title>
     <meta name="description" content="Описание сайта для поисковиков, рекомендуемый размер от 70 до 140 символов">
@@ -19,18 +19,35 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <!-- OG -->
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Название страницы, максимально 70 символов">
     <meta property="og:description" content="Описание, до 200 символов">
-    <meta property="og:image" content="img/og/poster-1200x630.jpg">
-    <meta property="og:url" content="ссылка на текущую страницу (http://www.site-name.com/current-page)">
+    <meta property="og:image" content="img/og/poster.jpg">
+    <meta property="og:url" content="http://www.site-name.com/current-page">
     <meta property="og:site_name" content="Webpack">
+    <!-- Modernizr -->
+    <script src="js/modernizr.custom.bundle.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page__body">
 
-    <script src="js/vendors.bundle.js"></script>
+    <header class="header">
+        <div class="container">
+            <svg>
+                <use href="img/sprites/general.svg#icon-webpack"></use>
+             </svg>
+        </div>
+    </header><!-- / .header -->
+
+    <main class="main">
+
+    </main><!-- / .main -->
+
+    <footer class="footer">
+
+    </footer><!-- / .footer -->
+
     <script src="js/app.bundle.js"></script>
 </body>
 </html>
