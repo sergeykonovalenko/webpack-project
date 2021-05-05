@@ -59,19 +59,25 @@ module.exports = mode => {
                 },
             ],
         },
-        // optimization: {
-        //     splitChunks: {
-        //         cacheGroups: {
-        //             vendor: {
-        //                 test: /node_modules/,
-        //                 name: 'vendors',
-        //                 chunks: 'all',
-        //                 enforce: true,
-        //             }
-        //         },
-        //     },
-        //     // runtimeChunk: true
-        // },
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    jquery: {
+                        test: /[\\/]node_modules[\\/](jquery)[\\/]/,
+                        name: 'jquery',
+                        chunks: 'all',
+                        enforce: true,
+                    },
+                    // vendor: {
+                    //     test: /node_modules/,
+                    //     name: 'vendors',
+                    //     chunks: 'all',
+                    //     enforce: true,
+                    // }
+                },
+            },
+            // runtimeChunk: true
+        },
         plugins: [
             new CleanWebpackPlugin(),
             ...PAGES.map(
