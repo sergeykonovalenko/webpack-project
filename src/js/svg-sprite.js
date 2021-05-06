@@ -1,1 +1,1 @@
-import('../img/svg-sprite/icon-webpack.svg');
+import '../img/svg-sprite/icon-webpack.svg';
