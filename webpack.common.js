@@ -23,6 +23,9 @@ module.exports = mode => {
             path: path.resolve(__dirname, 'dist'),
             // publicPath: '/',
         },
+        // externals: {
+        //     jquery: 'jQuery',
+        // },
         module: {
             rules: [
                 // {
@@ -60,6 +63,8 @@ module.exports = mode => {
             ],
         },
         optimization: {
+            runtimeChunk: 'single',
+            // runtimeChunk: true,
             splitChunks: {
                 cacheGroups: {
                     jquery: {
@@ -76,7 +81,6 @@ module.exports = mode => {
                     // }
                 },
             },
-            // runtimeChunk: true
         },
         plugins: [
             new CleanWebpackPlugin(),
