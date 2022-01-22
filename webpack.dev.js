@@ -91,8 +91,8 @@ module.exports = (env, argv) => {
         },
         plugins: [
             new MiniCssExtractPlugin({
-                // filename: 'css/[name].css',
-                filename: 'style.css',
+                filename: 'css/[name].css',
+                // filename: 'style.css',
             }),
             // new webpack.SourceMapDevToolPlugin({
             //     filename: "[file].map"

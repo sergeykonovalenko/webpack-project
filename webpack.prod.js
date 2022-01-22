@@ -70,7 +70,8 @@ module.exports = (env, argv) => {
         plugins: [
             new MiniCssExtractPlugin({
                 // filename: 'css/[name][hash].css',
-                filename: 'style.css',
+                filename: 'css/[name].css',
+                // filename: 'style.css',
             }),
             // new BundleAnalyzerPlugin(),
         ],
