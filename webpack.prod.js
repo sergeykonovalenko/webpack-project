@@ -1,9 +1,9 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => {
 
@@ -58,13 +58,13 @@ module.exports = (env, argv) => {
             ],
         },
         optimization: {
+            minimize: true,
             minimizer: [
-                new UglifyJsPlugin({
+                new TerserPlugin({
                     parallel: true,
-                    // chunkFilter: chunk => false,
-                    // sourceMap: true,
+                    // extractComments: false,
                 }),
-                new OptimizeCSSAssetsPlugin({}),
+                new CssMinimizerPlugin(),
             ],
         },
         plugins: [

@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
         devtool: 'eval-cheap-module-source-map',
         devServer: {
             devMiddleware: {
-                writeToDisk: true,
+                // writeToDisk: true,
             },
             static: {
                 // directory: path.resolve(__dirname, 'dist'),
