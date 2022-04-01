@@ -19,8 +19,8 @@ module.exports = mode => {
             'modernizr.custom': './src/js/vendor/modernizr-custom.js',
         },
         output: {
-            filename: 'js/[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
+            filename: 'js/[name].bundle.js',
             // publicPath: '/',
         },
         // externals: {
