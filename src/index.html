@@ -32,23 +32,15 @@
 </head>
 <body class="page__body">
 
-    <header class="header">
-        <div class="container">
-            <svg>
-                <use href="img/sprites/general.svg#icon-webpack"></use>
-             </svg>
-        </div>
-    </header><!-- / .header -->
+    <%= _.template(require('./includes/header.html').default)() %>
 
     <main class="main">
 
     </main><!-- / .main -->
 
-    <footer class="footer">
+    <%= _.template(require('./includes/footer.html').default)() %>
 
-    </footer><!-- / .footer -->
-
-    <script src="js/runtime.bundle.js"></script>
+    <!--<script src="js/runtime.bundle.js"></script>-->
     <script src="js/jquery.bundle.js"></script>
     <script src="js/app.bundle.js"></script>
 </body>

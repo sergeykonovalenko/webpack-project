@@ -62,15 +62,15 @@ module.exports = (env, argv) => {
             minimizer: [
                 new TerserPlugin({
                     parallel: true,
-                    // extractComments: false,
+                    extractComments: false,
                 }),
                 new CssMinimizerPlugin(),
             ],
         },
         plugins: [
             new MiniCssExtractPlugin({
-                // filename: 'css/[name][hash].css',
                 filename: 'css/[name].css',
+                // filename: 'css/[name][hash].css',
                 // filename: 'style.css',
             }),
             // new BundleAnalyzerPlugin(),

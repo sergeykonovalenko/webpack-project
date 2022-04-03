@@ -28,6 +28,28 @@ module.exports = mode => {
         // },
         module: {
             rules: [
+                {
+                    test: /\.html$/,
+                    loader: 'html-loader',
+                    options: {
+                        sources: false,
+                        minimize: false,
+                    },
+                    include: path.resolve(__dirname, 'src/includes'),
+                },
+                {
+                    test: /\.svg$/,
+                    use: [
+                        {
+                            loader: 'svg-sprite-loader',
+                            options: {
+                                extract: true,
+                                spriteFilename: 'img/sprites/general.svg'
+                            }
+                        },
+                        'svgo-loader',
+                    ]
+                },
                 // {
                 //     test: /\.(png|jpe?g|gif|svg)$/i,
                 //     use: [
@@ -42,24 +64,11 @@ module.exports = mode => {
                 // },
                 // {
                 //     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                //     loader: "file-loader",
+                //     loader: 'file-loader',
                 //     options: {
-                //         name: "[name].[ext]"
+                //         name: '[name].[ext]',
                 //     }
                 // },
-                {
-                    test: /\.svg$/,
-                    use: [
-                        {
-                            loader: 'svg-sprite-loader',
-                            options: {
-                                extract: true,
-                                spriteFilename: 'img/sprites/general.svg'
-                            }
-                        },
-                        'svgo-loader',
-                    ]
-                },
             ],
         },
         optimization: {
