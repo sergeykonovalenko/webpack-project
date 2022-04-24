@@ -22,7 +22,12 @@ module.exports = mode => {
             path: path.resolve(__dirname, 'dist'),
             filename: 'js/[name].bundle.js',
             // publicPath: '/',
+            // library: {
+            //     name: '[name]',
+            //     type: 'umd',
+            // },
         },
+        // cache: false,
         // externals: {
         //     jquery: 'jQuery',
         // },
@@ -72,7 +77,7 @@ module.exports = mode => {
             ],
         },
         optimization: {
-            runtimeChunk: 'single',
+            // runtimeChunk: 'single',
             // runtimeChunk: true,
             splitChunks: {
                 cacheGroups: {

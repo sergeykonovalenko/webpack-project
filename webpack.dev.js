@@ -5,9 +5,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 module.exports = (env, argv) => {
-
     return merge(common(argv.mode), {
-        devtool: 'eval-cheap-module-source-map',
+        // inline-source-map, eval-cheap-module-source-map
+        devtool: 'inline-cheap-module-source-map',
         devServer: {
             devMiddleware: {
                 // writeToDisk: true,
@@ -29,6 +29,7 @@ module.exports = (env, argv) => {
         },
         watchOptions: {
             aggregateTimeout: 100,
+            // ignored: /node_modules/,
         },
         module: {
             rules: [
