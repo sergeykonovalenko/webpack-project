@@ -11,5 +11,5 @@ charset = utf-8
 [{*.json,*.yml}]
 indent_size = 2
 
-[src/includes/**.html]
+[src/inc/**.html]
 insert_final_newline = false

@@ -40,7 +40,7 @@ module.exports = mode => {
                         sources: false,
                         minimize: false,
                     },
-                    include: path.resolve(__dirname, 'src/includes'),
+                    include: path.resolve(__dirname, 'src/inc'),
                 },
                 {
                     test: /\.svg$/,
