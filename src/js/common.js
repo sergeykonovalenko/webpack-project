@@ -1,6 +1,8 @@
-import '@fancyapps/fancybox/dist/jquery.fancybox.min';
+import { Fancybox } from "@fancyapps/ui";
 import 'focus-visible';
 import './svg-sprite';
+
+window.Fancybox = Fancybox;
 
 $(document).ready(function () {
     'use strict';

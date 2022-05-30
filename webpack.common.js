@@ -81,6 +81,12 @@ module.exports = mode => {
             // runtimeChunk: true,
             splitChunks: {
                 cacheGroups: {
+                    swiper: {
+                        test: /[\\/]node_modules[\\/](swiper)[\\/]/,
+                        name: 'swiper',
+                        chunks: 'all',
+                        enforce: true,
+                    },
                     jquery: {
                         test: /[\\/]node_modules[\\/](jquery)[\\/]/,
                         name: 'jquery',
