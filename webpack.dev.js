@@ -7,7 +7,7 @@ const webpack = require('webpack');
 module.exports = (env, argv) => {
     return merge(common(argv.mode), {
         // inline-source-map, eval-cheap-module-source-map
-        devtool: 'inline-cheap-module-source-map',
+        devtool: 'inline-source-map',
         devServer: {
             devMiddleware: {
                 // writeToDisk: true,
