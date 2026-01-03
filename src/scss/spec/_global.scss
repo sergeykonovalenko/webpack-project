@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -25,14 +27,14 @@ body {
   font-size: 14px;
   line-height: 1.5;
   font-family: "Open Sans", Tahoma, sans-serif;
-  color: $gray-1;
+  color: v.$gray-1;
   overflow-wrap: break-word;
   background-color: #fff;
 }
 
 a {
   text-decoration: none;
-  color: $gray-1;
+  color: v.$gray-1;
   text-decoration-skip-ink: none;
   transition: all 0.15s ease-out;
 
@@ -68,36 +70,34 @@ textarea {
   color: inherit;
   background-color: #fff;
   border-radius: 0;
-  transition:
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   &:focus {
     outline: none;
   }
 
   &[disabled] {
-    color: $gray-6;
-    border-color: $gray-6;
+    color: v.$gray-6;
+    border-color: v.$gray-6;
     cursor: not-allowed;
 
     &::placeholder {
-      color: $gray-6;
+      color: v.$gray-6;
     }
   }
 
   &.error {
-    caret-color: $color-error !important;
-    border-color: $color-error !important;
+    caret-color: v.$color-error !important;
+    border-color: v.$color-error !important;
 
     &:focus {
-      border-color: $color-error !important;
+      border-color: v.$color-error !important;
     }
   }
 }
 
 ::placeholder {
-  color: $gray-4;
+  color: v.$gray-4;
 }
 
 /* Remove shadow from fields for WebKit browsers */

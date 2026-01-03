@@ -28,9 +28,11 @@ module.exports = (env, argv) => {
             {
               loader: 'sass-loader',
               options: {
+                api: 'modern-compiler',
                 sassOptions: {
                   // indentWidth: 4,
                   // outputStyle: 'expanded',
+                  verbose: true,
                 },
               },
             },

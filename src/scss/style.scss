@@ -1,3 +1,6 @@
+@use "sass:meta";
+@use "spec/fonts";
+
 /* ==========================================================================
    VENDORS
    ========================================================================== */
@@ -7,21 +10,20 @@
 /* ==========================================================================
    SPECIFICATION
    ========================================================================== */
-@import "spec/fonts";
-@import "spec/variables";
-@import "spec/mixins";
-@import "spec/global";
-@import "spec/visually-hidden";
-@import "spec/animation";
+@include meta.load-css("spec/variables");
+@include meta.load-css("spec/mixins");
+@include meta.load-css("spec/global");
+@include meta.load-css("spec/visually-hidden");
+@include meta.load-css("spec/animation");
 
 /* ==========================================================================
    HOME PAGE
    ========================================================================== */
-@import "modules/button";
-@import "modules/focus-visible";
-@import "modules/content";
-@import "modules/clearfix";
-@import "modules/header";
-@import "modules/container";
-@import "modules/main";
-@import "modules/footer";
+@include meta.load-css("modules/button");
+@include meta.load-css("modules/focus-visible");
+@include meta.load-css("modules/content");
+@include meta.load-css("modules/clearfix");
+@include meta.load-css("modules/header");
+@include meta.load-css("modules/container");
+@include meta.load-css("modules/main");
+@include meta.load-css("modules/footer");
