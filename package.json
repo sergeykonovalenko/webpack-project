@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open --mode development --config webpack.dev.js",
     "build": "webpack --mode production --config webpack.prod.js",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "browserslist": [
     "last 2 versions",
