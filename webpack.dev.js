@@ -23,7 +23,7 @@ module.exports = (env, argv) => {
           warnings: true,
         },
       },
-      host: 'localhost', // 'localhost', 'local-ip'
+      host: 'local-ip', // 'localhost', 'local-ip'
       port: 'auto', // 8081, 'auto'
       hot: true, // true, 'only'
     },
