@@ -10,9 +10,9 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "browserslist": [
+    "> 0.5%",
     "last 2 versions",
-    "IE 11",
-    "Firefox ESR"
+    "not dead"
   ],
   "repository": {
     "type": "git",

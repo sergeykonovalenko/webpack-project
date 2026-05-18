@@ -4,6 +4,6 @@ import './svg-sprite';
 
 window.Fancybox = Fancybox;
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
   'use strict';
-}); // end ready
+}); // end DOMContentLoaded
