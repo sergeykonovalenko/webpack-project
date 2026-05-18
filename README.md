@@ -99,14 +99,14 @@
 
 Перед началом работы убедитесь, что у вас установлены:
 
-- **Node.js** >= 14.0.0
-- **npm** >= 6.0.0 (или **yarn** >= 1.22.0)
+- **Node.js** >= 18.12.0
+- **pnpm** >= 10.0.0
 
 Проверить версии:
 
 ```bash
 node --version
-npm --version
+pnpm --version
 ```
 
 ---
@@ -123,19 +123,13 @@ cd webpack-project
 ### 2. Установка зависимостей
 
 ```bash
-npm install
-```
-
-или с использованием Yarn:
-
-```bash
-yarn install
+pnpm install
 ```
 
 ### 3. Запуск dev-сервера
 
 ```bash
-npm start
+pnpm start
 ```
 
 Проект автоматически откроется в браузере по адресу `http://localhost:8080` (или другой доступный порт).
@@ -143,7 +137,7 @@ npm start
 ### 4. Сборка для production
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Готовые файлы будут находиться в папке `dist/`.
@@ -154,14 +148,14 @@ npm run build
 
 | Команда          | Описание                                               |
 | ---------------- | ------------------------------------------------------ |
-| `npm start`      | Запуск dev-сервера с автоматическим открытием браузера |
-| `npm run build`  | Production-сборка проекта с минификацией               |
-| `npm run watch`  | Режим отслеживания изменений без dev-сервера           |
-| `npm run format` | Форматирование кода с помощью Prettier                 |
+| `pnpm start`      | Запуск dev-сервера с автоматическим открытием браузера |
+| `pnpm run build`  | Production-сборка проекта с минификацией               |
+| `pnpm run watch`  | Режим отслеживания изменений без dev-сервера           |
+| `pnpm run format` | Форматирование кода с помощью Prettier                 |
 
 ### Детальное описание команд
 
-#### `npm start`
+#### `pnpm start`
 
 Запускает webpack-dev-server в режиме разработки:
 
@@ -170,7 +164,7 @@ npm run build
 - Автоматическое обновление браузера
 - Доступ с других устройств в локальной сети
 
-#### `npm run build`
+#### `pnpm run build`
 
 Создает оптимизированную production-сборку:
 
@@ -181,11 +175,11 @@ npm run build
 - Генерация SVG-спрайтов
 - Разделение кода на чанки
 
-#### `npm run watch`
+#### `pnpm run watch`
 
 Наблюдает за изменениями файлов и автоматически пересобирает проект без запуска сервера.
 
-#### `npm run format`
+#### `pnpm run format`
 
 Форматирует код в соответствии с настройками Prettier.
 
@@ -397,28 +391,28 @@ import './img/svg-sprite/icon-webpack.svg';
 
 ### Деплой
 
-После выполнения `npm run build` готовая сборка находится в папке `dist/`.
+После выполнения `pnpm run build` готовая сборка находится в папке `dist/`.
 
 Деплой на различные платформы:
 
 **GitHub Pages:**
 
 ```bash
-npm run build
+pnpm run build
 # Опубликуйте содержимое папки dist/
 ```
 
 **Netlify:**
 
 ```bash
-# Build command: npm run build
+# Build command: pnpm run build
 # Publish directory: dist
 ```
 
 **Vercel:**
 
 ```bash
-# Build command: npm run build
+# Build command: pnpm run build
 # Output directory: dist
 ```
 
